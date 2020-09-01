@@ -14,12 +14,12 @@ The Phone Number Input Field is a form field with the following features:
   In many countries it is possible to distinguish between mobile and land lines,
   among other types of numbers.
 
-- **All the features of a regular \<input\> tag**  
+- **Acts Like a Regular \<input\> Tag**  
   The Phone Number Input Field is an `<input>` tag with enhanced functionality.
   As a regular `<input>` tag, you can style it and interact with it in the
   normal way.
 
-- **Status Attributes**  
+- **Dynamic Status Attributes**  
   The HTML tag adds, removes or changes the value of various attributes in order
   to indicate what is known so far about the number that is being entered. These
   can be incorporated into CSS rules that indicate the style visually.
@@ -47,7 +47,7 @@ In your HTML, refer to the libphonenumber-js library and this one:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js/bundle/libphonenumber-max.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/phone-number-input-field"></src>
+<script src="https://cdn.jsdelivr.net/npm/phone-number-input-field"></script>
 ```
 
 ## How to Use
