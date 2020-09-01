@@ -26,7 +26,7 @@ The Phone Number Input Field is a form field with the following features:
 
 ## How to Install
 
-### Use bundler such as Webpack, Parcel etc.
+### Use a bundler such as Webpack, Parcel etc.
 
 1. Install the library into your Node project:
 
