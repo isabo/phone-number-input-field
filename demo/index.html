@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/sanitize.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sanitize.css/typography.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sanitize.css/forms.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        padding: 1rem;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      label {
+        display: inline-block;
+      }
+      label#country {
+        width: 3ch;
+      }
+
+      input[phone-is-possible] {
+        background-color: palegoldenrod;
+      }
+      input[phone-is-possible][phone-is-valid] {
+        background-color: palegreen;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js/bundle/libphonenumber-max.js"></script>
+    <script src="../dist/phone-number-input.min.js"></script>
+  </head>
+  <body>
+    <h1>Phone Input</h1>
+
+    <div>
+      <label for="default-country">Default Country</label>
+      <input
+        id="default-country"
+        type="text"
+        size="2"
+        maxlength="2"
+        style="text-transform: uppercase"
+        pattern="[a-zA-Z]{2}"
+        onchange="console.dir(event.target);if(this.validity.valid){const v=this.value.toUpperCase();countryLabel.innerText=v;phone.defaultCountry=v;}"
+      />
+      <p>
+        You would normally set the default country programmatically, e.g. by
+        GeoIP detection.
+      </p>
+    </div>
+
+    <h2>Enter your phone number</h2>
+    <div>
+      <label id="country" for="phone">IL</label>
+      <input
+        id="phone"
+        is="phone-number-input"
+        size="18"
+        default-country="IL"
+        oncountrychange="countryLabel.innerText = event.detail || event.target.defaultCountry"
+      />
+    </div>
+
+    <script>
+      const phone = document.getElementById('phone');
+      const countryLabel = document.getElementById('country');
+    </script>
+  </body>
+</html>

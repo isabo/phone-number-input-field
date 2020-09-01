@@ -6,6 +6,7 @@
   "module": "./dist/phone-number-input.min.js",
   "scripts": {
     "build": "rollup -c",
+    "demo": "npm run build && http-server -p 3001 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "http-server": "^0.12.3",
     "prettier": "^2.1.1",
     "rollup": "^2.26.8",
     "rollup-plugin-terser": "^7.0.1"
