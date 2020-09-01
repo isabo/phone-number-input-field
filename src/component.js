@@ -1,6 +1,7 @@
 import { h, app } from 'hyperapp';
 import { generateClass } from 'hyperapp-custom-element';
 import { subscriptions } from './subscriptions';
+import { InitialiseState } from './actions';
 
 const PhoneNumberInput = generateClass({
   app,

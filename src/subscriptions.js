@@ -1,3 +1,4 @@
+import { eventSubscriber } from './lib/events';
 import { HandleInput } from './actions';
 
 /**
