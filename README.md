@@ -90,6 +90,6 @@ document.body.appendChild(input2);
 
 ## Events
 
-| Event                | Description                                                                         |
-| -------------------- | ----------------------------------------------------------------------------------- |
-| phone-country-change | Dispatched whenever the country that is identified from the entered number changes. |
+| Event                | Description                                                                                                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| phone-country-change | Dispatched whenever the country that is identified from the entered number changes. In many cases this is well before the number is considered valid and/or its type is known. |
