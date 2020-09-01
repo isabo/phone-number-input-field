@@ -3,10 +3,25 @@ import { terser } from 'rollup-plugin-terser';
 
 export default {
   input: './src/component.js',
-  output: {
-    file: './dist/phone-number-input.min.js',
-    format: 'es',
-    sourcemap: true,
-  },
-  plugins: [nodeResolve(), terser()],
+  output: [
+    {
+      file: './dist/phone-number-input.min.js',
+      format: 'iife',
+      sourcemap: true,
+      globals: {
+        'libphonenumber-js/max': 'libphonenumber',
+      },
+      plugins: [terser()],
+    },
+    {
+      file: './dist/phone-number-input.js',
+      format: 'iife',
+      sourcemap: false,
+      globals: {
+        'libphonenumber-js/max': 'libphonenumber',
+      },
+    },
+  ],
+  plugins: [nodeResolve()],
+  external: ['libphonenumber-js/max'],
 };
