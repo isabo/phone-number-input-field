@@ -46,8 +46,8 @@ export function HandleInput(state, event) {
   const newState = {
     ...state,
     country: phone?.country || '',
-    phoneIsPossible: !!phone?.isPossible(),
-    phoneIsValid: !!phone?.isValid(),
+    phoneIsPossible: phone?.isPossible() || false,
+    phoneIsValid: phone?.isValid() || false,
     phoneType: phone?.getType() || '',
     phoneE164: phone?.format('E.164') || '',
   };
