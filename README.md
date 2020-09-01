@@ -2,24 +2,24 @@
 
 The Phone Number Input Field is a form field with the following features:
 
-- **Incremental Formatting**
+- **Incremental Formatting**  
   Phone numbers are formatted gradually with each keystroke. The digits are
   grouped and spaced in the standard way for the country of origin.
 
-- **Phone Number Validation**
+- **Phone Number Validation**  
   The entered number is validated with each keystroke to determine whether it is
   a valid number for the country it belongs to.
 
-- **Determination of Phone Number Type**
+- **Determination of Phone Number Type**  
   In many countries it is possible to distinguish between mobile and land lines,
   among other types of numbers.
 
-- **All the features of a regular`input` tag**
-  The Phone Number Input Field is an `input` tag with enhanced functionality. As
-  a regular `input` tag, you can style it and interact with it in the normal
-  way.
+- **All the features of a regular \<input\> tag**  
+  The Phone Number Input Field is an `<input>` tag with enhanced functionality.
+  As a regular `<input>` tag, you can style it and interact with it in the
+  normal way.
 
-- **Status Attributes**
+- **Status Attributes**  
   The HTML tag adds, removes or changes the value of various attributes in order
   to indicate what is known so far about the number that is being entered. These
   can be incorporated into CSS rules that indicate the style visually.
