@@ -78,16 +78,15 @@ document.body.appendChild(input2);
 
 ## Properties / Attributes
 
-| Property        | Attribute         | Description                                                                                                                                                                                        |
-| --------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| defaultCountry  | default-country   | Sets/gets the default country. This is                                                                                                                                                             |
-|                 |                   | needed when the entered number does not start with a country code prefix, e.g. +44. If you have a \<select\> tag with a list of countries, it should set this property when a country is selected. |
-| country         | country           | Gets the country of the current number. This allows the user to override the default country by using a country code prefix.                                                                       |
-| phoneIsValid    | phone-is-valid    | Indicates whether the current number is considered a valid number for the country.                                                                                                                 |
-| phoneIsPossible | phone-is-possible | Indicates whether the length of the phone number is reasonable for the country.                                                                                                                    |
-| phoneType       | phone-type        | The type of the phone number: MOBILE, FIXED_LINE, FIXED_LINE_OR_MOBILE, PREMIUM_RATE, TOLL_FREE, SHARED_COST, VOIP, PERSONAL_NUMBER, PAGER, UAN, VOICEMAIL                                         |
-| phoneE164       | phone-e164        | The phone number in E164 format, e.g. +12125551234                                                                                                                                                 |
-|                 | oncountrychange   | Sets an inline handler for the `phone-country-change` event. See below.                                                                                                                            |
+| Property        | Attribute         | Description                                                                                                                                                                                                                               |
+| --------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultCountry  | default-country   | Sets/gets the default country. This is needed when the entered number does not start with a country code prefix, e.g. +44. If you have a \<select\> tag with a list of countries, it should set this property when a country is selected. |
+| country         | country           | Gets the country of the current number. This allows the user to override the default country by using a country code prefix.                                                                                                              |
+| phoneIsValid    | phone-is-valid    | Indicates whether the current number is considered a valid number for the country.                                                                                                                                                        |
+| phoneIsPossible | phone-is-possible | Indicates whether the length of the phone number is reasonable for the country.                                                                                                                                                           |
+| phoneType       | phone-type        | The type of the phone number: MOBILE, FIXED_LINE, FIXED_LINE_OR_MOBILE, PREMIUM_RATE, TOLL_FREE, SHARED_COST, VOIP, PERSONAL_NUMBER, PAGER, UAN, VOICEMAIL                                                                                |
+| phoneE164       | phone-e164        | The phone number in E164 format, e.g. +12125551234                                                                                                                                                                                        |
+|                 | oncountrychange   | Sets an inline handler for the `phone-country-change` event. See below.                                                                                                                                                                   |
 
 ## Events
 
