@@ -86,7 +86,7 @@ document.body.appendChild(input2);
 | phoneIsPossible | phone-is-possible | Indicates whether the length of the phone number is reasonable for the country.                                                                                                                                                           |
 | phoneType       | phone-type        | The type of the phone number: MOBILE, FIXED_LINE, FIXED_LINE_OR_MOBILE, PREMIUM_RATE, TOLL_FREE, SHARED_COST, VOIP, PERSONAL_NUMBER, PAGER, UAN, VOICEMAIL                                                                                |
 | phoneE164       | phone-e164        | The phone number in E164 format, e.g. +12125551234                                                                                                                                                                                        |
-|                 | oncountrychange   | Sets an inline handler for the `phone-country-change` event. See below.                                                                                                                                                                   |
+| oncountrychange | oncountrychange   | Sets an inline handler for the `phone-country-change` event. See below.                                                                                                                                                                   |
 
 ## Events
 
