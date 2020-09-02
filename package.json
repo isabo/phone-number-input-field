@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "hyperapp": "^2.0.8",
-    "hyperapp-custom-element": "^0.4.2"
+    "hyperapp-custom-element": "file:hyperapp-custom-element-0.4.2.tgz"
   },
   "peerDependencies": {
     "libphonenumber-js": "^1.7.57"

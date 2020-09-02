@@ -41,6 +41,7 @@ const PhoneNumberInput = generateClass({
   ],
   useShadowDOM: false,
   parent: HTMLInputElement,
+  // middleware: wrapDispatch,
 });
 
 customElements.define('phone-number-input', PhoneNumberInput, {
