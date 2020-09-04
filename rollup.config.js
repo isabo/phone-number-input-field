@@ -11,7 +11,7 @@ export default {
       globals: {
         'libphonenumber-js/max': 'libphonenumber',
       },
-      plugins: [terser()],
+      plugins: [terser({ keep_fnames: true })],
     },
     {
       file: './dist/phone-number-input.js',
