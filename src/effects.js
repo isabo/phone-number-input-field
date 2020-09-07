@@ -2,6 +2,16 @@ import { parsePhoneNumberFromString, AsYouType } from 'libphonenumber-js/max';
 import { setValidity } from './lib/effects';
 import { ERROR_INVALID_PHONE_NUMBER, E164 } from './constants';
 
+/**
+ * Parses and validates the supplied phone number, then dispatches the specified
+ * action.
+ *
+ * @param {function} dispatch
+ * @param {Object} props
+ * @param {string} props.defaultCountry
+ * @param {string} props.value The phone number that needs to be parsed.
+ * @param {function} props.action The action to dispatch.
+ */
 export function parsePhoneNumber(dispatch, { defaultCountry, value, action }) {
   // Attempt to parse the phone number.
   const phone = parsePhoneNumberFromString(value, defaultCountry);
@@ -46,13 +56,23 @@ export function formatPhoneNumber(dispatch, { defaultCountry, input }) {
   }
 }
 
-export function createSetValidityEffect(state) {
+/**
+ * Creates and configures an effect tuple that will set the native element's
+ * validity status.
+ *
+ * @param {Object} props The properties are named so that the current state can
+ *    be passed in.
+ * @param {HTMLInputElement} props.self
+ * @param {boolean} props.phoneIsValid
+ * @param {string} props.errorMsg
+ */
+export function createSetValidityEffect({ self, phoneIsValid, errorMsg }) {
   return [
     setValidity,
     {
-      input: state.self,
-      isValid: state.phoneIsValid,
-      errorMsg: state.errorMsg || ERROR_INVALID_PHONE_NUMBER,
+      input: self,
+      isValid: phoneIsValid,
+      errorMsg: errorMsg || ERROR_INVALID_PHONE_NUMBER,
     },
   ];
 }

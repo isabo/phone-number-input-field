@@ -27,6 +27,14 @@ export function InitialiseState(state = {}) {
   return [newState, effect];
 }
 
+/**
+ * Sets the default country to use when parsing the phone number.
+ *
+ * @param {Object} state
+ * @param {Object} props
+ * @param {string} props.defaultCountry
+ * @returns {Array}
+ */
 export function SetDefaultCountry(state, { defaultCountry }) {
   const newState = {
     ...state,
@@ -55,20 +63,20 @@ export function SetDefaultCountry(state, { defaultCountry }) {
 export function SetErrorMessage(state, { errorMsg }) {
   const newState = { ...state, errorMsg };
 
-  // When changing the error message, the native validity needs to be reset.
+  // When changing the error message, the native validity needs to be reset,
+  // because the error message itself is used as a validity flag by the native
+  // element.
   const effect = createSetValidityEffect(state);
 
   return [newState, effect];
 }
 
 /**
- * Action that attempts to parse the number that has been entered so far, and
- * stores the results in the state. The new state will also cause the attributes
- * to change.
+ * Action that triggers parsing of the number that has been entered so far.
  *
  * @param {Object} state
  * @param {InputEvent} event
- * @returns a new state and an effect that will reformat the number if necessary
+ * @returns {Array}
  */
 export function HandleInput(state, event) {
   return [
@@ -84,6 +92,20 @@ export function HandleInput(state, event) {
   ];
 }
 
+/**
+ * Updates the state with the results of parsing and validating the contents of
+ * the element. Using effects, causes the native element's validity status to be
+ * updated, and reformats the punctuation of the number in the element.
+ *
+ * @param {Object} state
+ * @param {Object} props
+ * @param {string} props.country
+ * @param {boolean} props.phoneIsPossible
+ * @param {boolean} props.phoneIsValid
+ * @param {string} props.phoneType
+ * @param {string} props.phoneE164
+ * @returns {Array}
+ */
 export function UpdatePhoneNumber(state, props) {
   const newState = { ...state, ...props };
 
