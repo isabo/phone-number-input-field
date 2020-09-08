@@ -94,6 +94,7 @@ function HandleInput(state, event) {
   ];
 }
 
+// Create a debounced version of HandleInput.
 export const DebouncedInput = debounce(HandleInput, INPUT_DEBOUNCE_INTERVAL);
 
 /**
