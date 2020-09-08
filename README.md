@@ -99,6 +99,7 @@ document.body.appendChild(input2);
 | phoneIsPossible | phone-is-possible | Indicates whether the length of the phone number is reasonable for the country.                                                                                                                                                           |
 | phoneType       | phone-type        | The type of the phone number: MOBILE, FIXED_LINE, FIXED_LINE_OR_MOBILE, PREMIUM_RATE, TOLL_FREE, SHARED_COST, VOIP, PERSONAL_NUMBER, PAGER, UAN, VOICEMAIL                                                                                |
 | phoneE164       | phone-e164        | The phone number in E164 format, e.g. +12125551234                                                                                                                                                                                        |
+| onparse         | onparse           | Sets an inline handler for the `phone-parse` event. See below.                                                                                                                                                                            |
 | oncountrychange | oncountrychange   | Sets an inline handler for the `phone-country-change` event. See below.                                                                                                                                                                   |
 
 ### Events
@@ -106,9 +107,10 @@ document.body.appendChild(input2);
 The following are in addition to the events dispatched by the standard \<input\>
 element.
 
-| Event                | Description                                                                                                                                                                    |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| phone-country-change | Dispatched whenever the country that is identified from the entered number changes. In many cases this is well before the number is considered valid and/or its type is known. |
+| Event                | Description                                                                                                                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| phone-parse          | Dispatched whenever the value of the field is parsed. Parsing is triggered by the standard `input` events, but is debounced. Therefore, it may be preferable to listen to this instead of `input` events. |
+| phone-country-change | Dispatched whenever the country that is identified from the entered number changes. In many cases this is well before the number is considered valid and/or its type is known.                            |
 
 ### Tips
 

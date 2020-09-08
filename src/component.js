@@ -3,6 +3,7 @@ import { generateClass } from 'hyperapp-custom-element';
 import { traceDispatch } from 'hyperapp-debug-trace';
 import { subscriptions } from './subscriptions';
 import { InitialiseState, SetErrorMessage, SetDefaultCountry } from './actions';
+import { EventTypes } from './constants';
 
 const PhoneNumberInput = generateClass({
   app,
@@ -41,9 +42,14 @@ const PhoneNumberInput = generateClass({
       attrName: 'phone-e164',
     },
     {
+      propName: 'onparse',
+      attrName: 'onparse',
+      eventType: EventTypes.PARSE,
+    },
+    {
       propName: 'oncountrychange',
       attrName: 'oncountrychange',
-      eventType: 'phone-country-change',
+      eventType: EventTypes.COUNTRY_CHANGE,
     },
   ],
   useShadowDOM: false,

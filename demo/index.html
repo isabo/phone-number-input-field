@@ -41,7 +41,6 @@
   </head>
   <body>
     <h1>Phone Input</h1>
-
     <div>
       <label for="default-country">Default Country</label>
       <input
@@ -72,7 +71,7 @@
         size="18"
         default-country="IL"
         oncountrychange="handleActualCountryChange(event)"
-        oninput="showProperties()"
+        onparse="showProperties()"
       />
     </div>
     <pre id="properties"></pre>

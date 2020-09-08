@@ -6,7 +6,7 @@ import {
   formatPhoneNumber,
   createSetValidityEffect,
 } from './effects';
-import { INPUT_DEBOUNCE_INTERVAL } from './constants';
+import { INPUT_DEBOUNCE_INTERVAL, EventTypes } from './constants';
 
 /**
  * Initialises the element.
@@ -119,6 +119,8 @@ export function UpdatePhoneNumber(state, props) {
       formatPhoneNumber,
       { defaultCountry: newState.defaultCountry, input: newState.self },
     ],
+    // Tell listeners that the number has been parsed.
+    [dispatchEventEffect, { eventType: EventTypes.PARSE }],
   ];
 
   // If the country has changed, add an effect that will dispatch an event.
