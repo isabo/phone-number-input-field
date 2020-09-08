@@ -30,7 +30,7 @@
       }
 
       input[phone-is-possible] {
-        background-color: palegoldenrod;
+        background-color: lightyellow;
       }
       input:valid[is='phone-number-input'] {
         background-color: palegreen;
@@ -53,7 +53,7 @@
         maxlength="2"
         style="text-transform: uppercase"
         pattern="[a-zA-Z]{2}"
-        onchange="console.dir(event.target);if(this.validity.valid){const v=this.value.toUpperCase();countryLabel.innerText=v;phone.defaultCountry=v;}"
+        onchange="handleDefaultCountryChange(event)"
       />
       <p>
         You would normally set the default country programmatically, e.g. by
@@ -71,13 +71,53 @@
         autocomplete="tel-national"
         size="18"
         default-country="IL"
-        oncountrychange="countryLabel.innerText = event.detail || event.target.defaultCountry"
+        oncountrychange="handleActualCountryChange(event)"
+        oninput="showProperties()"
       />
     </div>
+    <pre id="properties"></pre>
 
     <script>
       const phone = document.getElementById('phone');
       const countryLabel = document.getElementById('country');
+      const properties = document.getElementById('properties');
+
+      /**
+       * When the default country changes, update the phone number input field.
+       */
+      function handleDefaultCountryChange(event) {
+        const input = event.target;
+        if (input.validity.valid) {
+          phone.defaultCountry = input.value.toUpperCase();
+        }
+      }
+
+      /**
+       * When the country of the phone number changes, update the relevant
+       * label. If the country is unknown, use the default.
+       * The country can change when the user enters a number including an
+       * explicit country code, e.g. +972. Alternatively it can happen when
+       * entering numbers for countries that share a country code, e.g. US and
+       * CA.
+       */
+      function handleActualCountryChange(event) {
+        countryLabel.innerText = event.detail || event.target.defaultCountry;
+      }
+
+      /**
+       * Build a map of property/value pairs that are special to this component.
+       */
+      function showProperties() {
+        const props = {};
+        const names = Object.getOwnPropertyNames(Object.getPrototypeOf(phone));
+        for (const name of names.sort()) {
+          if (typeof phone[name] !== 'function') {
+            props[name] = phone[name];
+          }
+        }
+
+        properties.innerText = JSON.stringify(props, null, '\t');
+      }
     </script>
   </body>
 </html>
