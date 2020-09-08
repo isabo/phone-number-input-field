@@ -37,7 +37,15 @@ The Phone Number Input Field is a form field with the following features:
 npm install phone-number-input-field
 ```
 
-2. In your HTML, refer to the libphonenumber-js library and this one:
+2. If it is not already installed, install the libphonenumber-js peer
+   dependency.
+
+```
+npm install libphonenumber-js
+```
+
+3. In your HTML, refer to the libphonenumber-js and phone-number-input
+   javascript files:
 
 ```html
 <script src="./path-to/libphonenumber-max.js"></script>
@@ -46,7 +54,8 @@ npm install phone-number-input-field
 
 ### Using a CDN
 
-In your HTML, refer to the libphonenumber-js library and this one:
+In your HTML, refer to the libphonenumber-js javascript file and the
+phone-number-input package.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js/bundle/libphonenumber-max.js"></script>
@@ -57,8 +66,8 @@ In your HTML, refer to the libphonenumber-js library and this one:
 
 ### HTML
 
-It can be used in the same way as a regular `input` tag, but the
-`is="phone-number-input"` attribute must be specified.
+Use phone-number-input in the same way as a regular `input` tag, but you must
+specify the `is="phone-number-input"` attribute.
 
 ```html
 <input is="phone-number-input" />
