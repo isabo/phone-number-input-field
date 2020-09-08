@@ -1,5 +1,5 @@
 import { eventSubscriber } from './lib/events';
-import { HandleInput } from './actions';
+import { DebouncedInput } from './actions';
 
 /**
  * Returns an array of subscriptions.
@@ -16,7 +16,7 @@ export function subscriptions(state) {
       {
         target: state.self,
         eventType: 'input',
-        action: HandleInput,
+        action: DebouncedInput,
       },
     ],
   ];

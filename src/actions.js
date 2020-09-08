@@ -1,10 +1,12 @@
 import { dispatchEventEffect } from 'hyperapp-custom-element';
 import { initNativeProperties } from './lib/effects';
+import { debounce } from './lib/debounce';
 import {
   parsePhoneNumber,
   formatPhoneNumber,
   createSetValidityEffect,
 } from './effects';
+import { INPUT_DEBOUNCE_INTERVAL } from './constants';
 
 /**
  * Initialises the element.
@@ -78,7 +80,7 @@ export function SetErrorMessage(state, { errorMsg }) {
  * @param {InputEvent} event
  * @returns {Array}
  */
-export function HandleInput(state, event) {
+function HandleInput(state, event) {
   return [
     state,
     [
@@ -91,6 +93,8 @@ export function HandleInput(state, event) {
     ],
   ];
 }
+
+export const DebouncedInput = debounce(HandleInput, INPUT_DEBOUNCE_INTERVAL);
 
 /**
  * Updates the state with the results of parsing and validating the contents of
