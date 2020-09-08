@@ -8,7 +8,9 @@ The Phone Number Input Field is a form field with the following features:
 
 - **Phone Number Validation**  
   The entered number is validated with each keystroke to determine whether it is
-  a valid number for the country it belongs to.
+  a valid number for the country it belongs to. The standard
+  `inputElement.validity.valid` property will indicate whether the phone number
+  is valid.
 
 - **Determination of Phone Number Type**  
   In many countries it is possible to distinguish between mobile and land lines,
@@ -82,6 +84,7 @@ document.body.appendChild(input2);
 | Property        | Attribute         | Description                                                                                                                                                                                                                               |
 | --------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | defaultCountry  | default-country   | Sets/gets the default country. This is needed when the entered number does not start with a country code prefix, e.g. +44. If you have a \<select\> tag with a list of countries, it should set this property when a country is selected. |
+| errorMsg        | error-msg         | Sets/gets the standard HTML form validation error message that the browser will display when validating a form containing this component. Default: "Invalid phone number!"                                                                |
 | country         | country           | Gets the country of the current number. This allows the user to override the default country by using a country code prefix.                                                                                                              |
 | phoneIsValid    | phone-is-valid    | Indicates whether the current number is considered a valid number for the country.                                                                                                                                                        |
 | phoneIsPossible | phone-is-possible | Indicates whether the length of the phone number is reasonable for the country.                                                                                                                                                           |
