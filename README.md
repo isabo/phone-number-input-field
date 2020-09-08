@@ -17,16 +17,17 @@ The Phone Number Input Field is a form field with the following features:
 - **Acts Like a Regular \<input\> Tag**  
   The Phone Number Input Field is an `<input>` tag with enhanced functionality.
   As a regular `<input>` tag, you can style it and interact with it in the
-  normal way.
+  normal way. It is therefore framework-agnostic, i.e. it can be used with any
+  framework.
 
 - **Dynamic Status Attributes**  
   The HTML tag adds, removes or changes the value of various attributes in order
   to indicate what is known so far about the number that is being entered. These
   can be incorporated into CSS rules that indicate the style visually.
 
-## How to Install
+## Installation
 
-### Use a bundler such as Webpack, Parcel etc.
+### Using a bundler such as Webpack, Parcel etc.
 
 1. Install the library into your Node project:
 
@@ -41,7 +42,7 @@ npm install phone-number-input-field
 <script src="./path-to/phone-number-input.min.js"></script>
 ```
 
-### Use a CDN
+### Using a CDN
 
 In your HTML, refer to the libphonenumber-js library and this one:
 
@@ -50,7 +51,7 @@ In your HTML, refer to the libphonenumber-js library and this one:
 <script src="https://cdn.jsdelivr.net/npm/phone-number-input-field"></script>
 ```
 
-## How to Use
+## Usage
 
 ### HTML
 
@@ -76,7 +77,7 @@ const input2 = new PhoneNumberInput();
 document.body.appendChild(input2);
 ```
 
-## Properties / Attributes
+### Properties / Attributes
 
 | Property        | Attribute         | Description                                                                                                                                                                                                                               |
 | --------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -88,8 +89,26 @@ document.body.appendChild(input2);
 | phoneE164       | phone-e164        | The phone number in E164 format, e.g. +12125551234                                                                                                                                                                                        |
 | oncountrychange | oncountrychange   | Sets an inline handler for the `phone-country-change` event. See below.                                                                                                                                                                   |
 
-## Events
+### Events
+
+The following are in addition to the events dispatched by the standard \<input\>
+element.
 
 | Event                | Description                                                                                                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | phone-country-change | Dispatched whenever the country that is identified from the entered number changes. In many cases this is well before the number is considered valid and/or its type is known. |
+
+### Tips
+
+- Use the standard input field's `autocomplete` attribute with an appropriate
+  value, e.g. `autocomplete="tel-national"` to cause the browser to suggest
+  the user's phone number if it has been used elsewhere.
+
+# Developing & Building
+
+- This project uses the [Hyperapp](https://github.com/jorgebucaran/hyperapp)
+  microframework, and my Hyperapp
+  [CustomElement library](https://github.com/isabo/hyperapp-custom-element).
+- `npm run build` runs the build script.
+- `npm run demo` runs a web server that will build the component and serve the
+  demo page.
