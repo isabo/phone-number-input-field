@@ -2,7 +2,7 @@ import { h, app } from 'hyperapp';
 import { generateClass } from 'hyperapp-custom-element';
 import { traceDispatch } from 'hyperapp-debug-trace';
 import { subscriptions } from './subscriptions';
-import { InitialiseState } from './actions';
+import { InitialiseState, SetErrorMessage, SetDefaultCountry } from './actions';
 
 const PhoneNumberInput = generateClass({
   app,
@@ -13,6 +13,12 @@ const PhoneNumberInput = generateClass({
     {
       propName: 'defaultCountry',
       attrName: 'default-country',
+      setter: SetDefaultCountry,
+    },
+    {
+      propName: 'errorMsg',
+      attrName: 'error-msg',
+      setter: SetErrorMessage,
     },
     {
       propName: 'phoneIsValid',

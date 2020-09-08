@@ -32,7 +32,7 @@
       input[phone-is-possible] {
         background-color: palegoldenrod;
       }
-      input[phone-is-possible][phone-is-valid] {
+      input:valid[is='phone-number-input'] {
         background-color: palegreen;
       }
     </style>
@@ -47,6 +47,8 @@
       <input
         id="default-country"
         type="text"
+        required
+        autocomplete="country"
         size="2"
         maxlength="2"
         style="text-transform: uppercase"
@@ -65,6 +67,8 @@
       <input
         id="phone"
         is="phone-number-input"
+        required
+        autocomplete="tel-national"
         size="18"
         default-country="IL"
         oncountrychange="countryLabel.innerText = event.detail || event.target.defaultCountry"
