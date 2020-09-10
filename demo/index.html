@@ -61,6 +61,25 @@
     </div>
 
     <h2>Enter a phone number</h2>
+    <ul>
+      <li>
+        Try numbers in your default country, with or without the international
+        prefix, and with or without the leading zero.
+      </li>
+      <li>
+        Try numbers from countries other than your default, with their
+        international prefixes.
+      </li>
+      <li>
+        See what happens with these numbers from countries that share their
+        international prefix with additional countries:
+        <ul>
+          <li>Default country: US: 718-851-5721 vs. 514-342-4295</li>
+          <li>Default country: GB: 07911 234567 vs. 07911 123456</li>
+        </ul>
+      </li>
+    </ul>
+
     <div>
       <label id="country" for="phone">IL</label>
       <input
@@ -74,7 +93,11 @@
         onparse="showProperties()"
       />
     </div>
-    <pre id="properties"></pre>
+
+    <h3>Properties</h3>
+    <blockquote>
+      <pre id="properties"></pre>
+    </blockquote>
 
     <script>
       const phone = document.getElementById('phone');
