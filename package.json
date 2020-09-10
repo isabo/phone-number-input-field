@@ -1,6 +1,6 @@
 {
   "name": "phone-number-input-field",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "HTML input component that formats and validates phone numbers.",
   "main": "./dist/phone-number-input.min.js",
   "module": "./dist/phone-number-input.min.js",
