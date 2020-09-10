@@ -129,4 +129,4 @@ element.
   [CustomElement library](https://github.com/isabo/hyperapp-custom-element).
 - `npm run build` runs the build script.
 - `npm run demo` runs a local web server that will build the component and serve
-  the demo page.
+  the demo page at http://localhost:3001/docs/
