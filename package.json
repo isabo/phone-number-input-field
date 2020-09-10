@@ -1,9 +1,20 @@
 {
   "name": "phone-number-input-field",
   "version": "0.1.0",
-  "description": "HTML input component that formats and validates phone numbers. ",
+  "description": "HTML input component that formats and validates phone numbers.",
   "main": "./dist/phone-number-input.min.js",
   "module": "./dist/phone-number-input.min.js",
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isabo/phone-number-input-field"
+  },
+  "bugs": {
+    "url": "https://github.com/isabo/phone-number-input-field/issues"
+  },
+  "homepage": "https://github.com/isabo/phone-number-input-field#readme",
   "scripts": {
     "build": "rollup -c",
     "demo": "npm run build && http-server -p 3001 -c-1",
@@ -22,8 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "hyperapp": "^2.0.8",
-    "hyperapp-custom-element": "^0.5.0",
-    "hyperapp-debug-trace": "^0.1.0"
+    "hyperapp-custom-element": "^0.5.1"
   },
   "peerDependencies": {
     "libphonenumber-js": "^1.7.57"
