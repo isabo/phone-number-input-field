@@ -1,6 +1,5 @@
 import { h, app } from 'hyperapp';
 import { generateClass } from 'hyperapp-custom-element';
-import { traceDispatch } from 'hyperapp-debug-trace';
 import { subscriptions } from './subscriptions';
 import { InitialiseState, SetErrorMessage, SetDefaultCountry } from './actions';
 import { EventTypes } from './constants';
@@ -54,7 +53,6 @@ const PhoneNumberInput = generateClass({
   ],
   useShadowDOM: false,
   parent: HTMLInputElement,
-  middleware: traceDispatch,
 });
 
 customElements.define('phone-number-input', PhoneNumberInput, {
