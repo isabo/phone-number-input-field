@@ -27,6 +27,10 @@ The Phone Number Input Field is a form field with the following features:
   to indicate what is known so far about the number that is being entered. These
   can be incorporated into CSS rules that indicate the style visually.
 
+## Demonstration
+
+[See here for a live demo](https://isabo.github.io/phone-number-input-field/)
+
 ## Installation
 
 ### Using a bundler such as Webpack, Parcel etc.
@@ -124,5 +128,5 @@ element.
   microframework, and my Hyperapp
   [CustomElement library](https://github.com/isabo/hyperapp-custom-element).
 - `npm run build` runs the build script.
-- `npm run demo` runs a web server that will build the component and serve the
-  demo page.
+- `npm run demo` runs a local web server that will build the component and serve
+  the demo page.
