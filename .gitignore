@@ -1,6 +1,8 @@
 dist/
-
 node_modules/
+
+.devcontainer/
+.vscode/
 
 .DS_Store
 Thumbs.db
