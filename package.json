@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/isabo/phone-number-input-field#readme",
   "scripts": {
-    "build": "rollup -c",
+    "format": "prettier '!dist/*' '**/*.(js|json|html|md)' --write && rollup -c",
+    "build": "npm run format && rollup -c",
     "demo": "npm run build && http-server -p 3001 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
