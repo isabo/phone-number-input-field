@@ -66,6 +66,12 @@ phone-number-input package.
 <script src="https://cdn.jsdelivr.net/npm/phone-number-input-field"></script>
 ```
 
+If you want to use the source map to debug, use this instead of the second line:
+
+```
+<script src="https://cdn.jsdelivr.net/npm/phone-number-input-field/dist/phone-number-input.min.js"></script>
+```
+
 ## Usage
 
 ### HTML
