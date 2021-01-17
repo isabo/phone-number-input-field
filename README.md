@@ -72,6 +72,20 @@ If you want to use the source map to debug, use this instead of the second line:
 <script src="https://cdn.jsdelivr.net/npm/phone-number-input-field/dist/phone-number-input.min.js"></script>
 ```
 
+### Including the CustomElements Polyfill
+
+The following polyfill is necessary in order to use this component in Safari and
+older browsers that do not support the part of the Custom Elements v1 API that
+[allows extension of built-in components](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example).
+
+```html
+<!-- this should be on top of your HTML <head> scripts -->
+<script src="//unpkg.com/@ungap/custom-elements"></script>
+```
+
+See the [Ungap Custom Elements polyfill](https://github.com/ungap/custom-elements)
+for some optimisations and for additional details.
+
 ## Usage
 
 ### HTML
