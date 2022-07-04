@@ -129,7 +129,7 @@ export function UpdatePhoneNumber(state, props) {
     effects.push([
       dispatchEventEffect,
       {
-        eventType: 'phone-country-change',
+        eventType: EventTypes.COUNTRY_CHANGE,
         eventInit: { detail: newState.country },
       },
     ]);
